@@ -23,3 +23,21 @@ models:
           seed_file: ref('uniswap_worldchain_base_trades_seed')
           filter:
             version: 3
+
+  - name: dyorswap_worldchain_base_trades
+    meta:
+      blockchain: worldchain
+      sector: dex
+      project: dyorswap
+      contributors: bertastr
+    config:
+      tags: [ 'worldchain', 'dex', 'trades', 'dyorswap' ]
+    description: "dyorswap worldchain base trades"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - tx_hash
+            - evt_index
+      - check_dex_base_trades_seed:
+          seed_file: ref('dyorswap_worldchain_base_trades_seed')
+  
