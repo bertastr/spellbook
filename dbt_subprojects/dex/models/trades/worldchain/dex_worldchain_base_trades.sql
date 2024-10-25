@@ -7,6 +7,7 @@
 
 {% set base_models = [
     ref('uniswap_v3_worldchain_base_trades')
+  , ref('dyorswap_worldchain_base_trades')
 ] %}
 
 WITH base_union AS (
