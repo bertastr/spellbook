@@ -112,3 +112,20 @@ models:
             - evt_index
       - check_dex_base_trades_seed:
           seed_file: ref('defi_kingdoms_kaia_base_trades_seed')
+
+  - name: claimswap_kaia_base_trades
+    meta:
+      blockchain: kaia
+      sector: dex
+      project: claimswap
+      contributors: bertastr 
+    config:
+      tags: [ 'kaia', 'dex', 'trades', 'claimswap' ]
+    description: "claimswap base base trades"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - tx_hash
+            - evt_index
+      - check_dex_base_trades_seed:
+          seed_file: ref('claimswap_kaia_base_trades_seed')
